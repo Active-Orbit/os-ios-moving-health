@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ConfirmRegistrationDialog" customModule="MovingHealth" customModuleProvider="target">
+            <connections>
+                <outlet property="cancelBtn" destination="a87-VC-elO" id="pGV-PJ-zNE"/>
+                <outlet property="confirmBtn" destination="YB5-2r-HYu" id="TRq-w9-111"/>
+                <outlet property="dialogView" destination="cV9-Io-Avj" id="wmd-u8-SmK"/>
+                <outlet property="titleLabel" destination="Xwp-uh-KXF" id="zgf-hQ-e2x"/>
+                <outlet property="topView" destination="5SK-hs-eWE" id="GcL-lb-lbk"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clipsSubviews="YES" contentMode="scaleToFill" id="VHB-rB-fkw">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cV9-Io-Avj" userLabel="DialogView">
+                    <rect key="frame" x="16" y="356.5" width="382" height="183"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5SK-hs-eWE" userLabel="TopView">
+                            <rect key="frame" x="0.0" y="0.0" width="382" height="50"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xwp-uh-KXF" userLabel="TitleLabel" customClass="BaseLabel" customModule="MovingHealth" customModuleProvider="target">
+                                    <rect key="frame" x="16" y="25" width="350" height="0.0"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" name="textColorPrimary"/>
+                                    <nil key="highlightedColor"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="textSize">
+                                            <real key="value" value="3"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="textFont">
+                                            <real key="value" value="2"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="localizedText" value="confirm_registration"/>
+                                    </userDefinedRuntimeAttributes>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" name="colorPrimary"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="CcP-gl-WYG"/>
+                                <constraint firstItem="Xwp-uh-KXF" firstAttribute="leading" secondItem="5SK-hs-eWE" secondAttribute="leading" constant="16" id="ME4-cF-K2c"/>
+                                <constraint firstAttribute="trailing" secondItem="Xwp-uh-KXF" secondAttribute="trailing" constant="16" id="Y44-8z-kl5"/>
+                                <constraint firstItem="Xwp-uh-KXF" firstAttribute="centerY" secondItem="5SK-hs-eWE" secondAttribute="centerY" id="fL2-vd-QEh"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dNz-Tn-a6H" userLabel="BottomView">
+                            <rect key="frame" x="0.0" y="50" width="382" height="48"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SRa-3o-lYK" userLabel="Description" customClass="BaseLabel" customModule="MovingHealth" customModuleProvider="target">
+                                    <rect key="frame" x="16" y="16" width="350" height="0.0"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" name="textColorPrimaryDark"/>
+                                    <nil key="highlightedColor"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="textSize">
+                                            <real key="value" value="5"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="textFont">
+                                            <real key="value" value="2"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="localizedText" value="confirm_registration_title"/>
+                                    </userDefinedRuntimeAttributes>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UbM-av-K2C" userLabel="SubDescription" customClass="BaseLabel" customModule="MovingHealth" customModuleProvider="target">
+                                    <rect key="frame" x="16" y="32" width="350" height="0.0"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" name="textColorAccent"/>
+                                    <nil key="highlightedColor"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="textSize">
+                                            <real key="value" value="5"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="textFont">
+                                            <real key="value" value="2"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="localizedText" value="confirm_registration_description"/>
+                                    </userDefinedRuntimeAttributes>
+                                </label>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="SRa-3o-lYK" secondAttribute="trailing" constant="16" id="Cnr-vO-wEr"/>
+                                <constraint firstAttribute="trailing" secondItem="UbM-av-K2C" secondAttribute="trailing" constant="16" id="PJO-FL-SaV"/>
+                                <constraint firstItem="SRa-3o-lYK" firstAttribute="top" secondItem="dNz-Tn-a6H" secondAttribute="top" constant="16" id="X8m-tS-hwR"/>
+                                <constraint firstAttribute="bottom" secondItem="UbM-av-K2C" secondAttribute="bottom" constant="16" id="vhP-GO-I62"/>
+                                <constraint firstItem="UbM-av-K2C" firstAttribute="top" secondItem="SRa-3o-lYK" secondAttribute="bottom" constant="16" id="wAR-ch-vNo"/>
+                                <constraint firstItem="SRa-3o-lYK" firstAttribute="leading" secondItem="dNz-Tn-a6H" secondAttribute="leading" constant="16" id="yJa-eL-EQR"/>
+                                <constraint firstItem="UbM-av-K2C" firstAttribute="leading" secondItem="dNz-Tn-a6H" secondAttribute="leading" constant="16" id="zbi-C4-xLu"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CoB-3Y-d9E" userLabel="Buttons">
+                            <rect key="frame" x="0.0" y="118" width="382" height="45"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a87-VC-elO" userLabel="CancelButton" customClass="BaseButton" customModule="MovingHealth" customModuleProvider="target">
+                                    <rect key="frame" x="16" y="0.0" width="133.5" height="45"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="45" id="Zz9-ni-7ER"/>
+                                    </constraints>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="textSize">
+                                            <real key="value" value="3"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="textFont">
+                                            <real key="value" value="2"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="type">
+                                            <integer key="value" value="1"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="localizedTitle" value="cancel"/>
+                                    </userDefinedRuntimeAttributes>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YB5-2r-HYu" userLabel="ConfirmButton" customClass="BaseButton" customModule="MovingHealth" customModuleProvider="target">
+                                    <rect key="frame" x="165.5" y="0.0" width="200.5" height="45"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="45" id="h7B-oY-qO3"/>
+                                    </constraints>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="textSize">
+                                            <real key="value" value="3"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="textFont">
+                                            <real key="value" value="2"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="type">
+                                            <integer key="value" value="0"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="localizedTitle" value="continue_btn"/>
+                                    </userDefinedRuntimeAttributes>
+                                </button>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="45" id="BKN-0I-aZD"/>
+                                <constraint firstItem="YB5-2r-HYu" firstAttribute="leading" secondItem="a87-VC-elO" secondAttribute="trailing" constant="16" id="Mzo-gO-g6o"/>
+                                <constraint firstItem="YB5-2r-HYu" firstAttribute="top" secondItem="CoB-3Y-d9E" secondAttribute="top" id="Spo-qn-8tC"/>
+                                <constraint firstItem="YB5-2r-HYu" firstAttribute="width" secondItem="a87-VC-elO" secondAttribute="width" multiplier="1.5" id="Z5n-Fa-ZVT"/>
+                                <constraint firstAttribute="trailing" secondItem="YB5-2r-HYu" secondAttribute="trailing" constant="16" id="ebm-TF-8Ya"/>
+                                <constraint firstAttribute="bottom" secondItem="a87-VC-elO" secondAttribute="bottom" id="jOg-UX-xQb"/>
+                                <constraint firstAttribute="bottom" secondItem="YB5-2r-HYu" secondAttribute="bottom" id="mAb-Hw-J8v"/>
+                                <constraint firstItem="a87-VC-elO" firstAttribute="leading" secondItem="CoB-3Y-d9E" secondAttribute="leading" constant="16" id="pKp-9f-QDb"/>
+                                <constraint firstItem="a87-VC-elO" firstAttribute="top" secondItem="CoB-3Y-d9E" secondAttribute="top" id="yiZ-Hf-6lT"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" name="colorBackground"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="CoB-3Y-d9E" secondAttribute="bottom" constant="20" id="8Ov-fX-VV2"/>
+                        <constraint firstAttribute="trailing" secondItem="CoB-3Y-d9E" secondAttribute="trailing" id="Na9-vo-0Tb"/>
+                        <constraint firstItem="5SK-hs-eWE" firstAttribute="top" secondItem="cV9-Io-Avj" secondAttribute="top" id="Tl0-jM-mZv"/>
+                        <constraint firstItem="5SK-hs-eWE" firstAttribute="leading" secondItem="cV9-Io-Avj" secondAttribute="leading" id="aG5-5B-mUM"/>
+                        <constraint firstAttribute="trailing" secondItem="dNz-Tn-a6H" secondAttribute="trailing" id="aSf-we-YMf"/>
+                        <constraint firstItem="dNz-Tn-a6H" firstAttribute="top" secondItem="5SK-hs-eWE" secondAttribute="bottom" id="dJA-n6-wee"/>
+                        <constraint firstItem="dNz-Tn-a6H" firstAttribute="leading" secondItem="cV9-Io-Avj" secondAttribute="leading" id="oBc-9a-lD6"/>
+                        <constraint firstAttribute="trailing" secondItem="5SK-hs-eWE" secondAttribute="trailing" id="sh0-1o-paZ"/>
+                        <constraint firstItem="CoB-3Y-d9E" firstAttribute="top" secondItem="dNz-Tn-a6H" secondAttribute="bottom" constant="20" id="xZp-5A-lnn"/>
+                        <constraint firstItem="CoB-3Y-d9E" firstAttribute="leading" secondItem="cV9-Io-Avj" secondAttribute="leading" id="yPh-ro-SFH"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="8ST-Ji-mcj"/>
+            <constraints>
+                <constraint firstItem="cV9-Io-Avj" firstAttribute="centerY" secondItem="VHB-rB-fkw" secondAttribute="centerY" id="BE8-Ws-3xV"/>
+                <constraint firstItem="cV9-Io-Avj" firstAttribute="leading" secondItem="VHB-rB-fkw" secondAttribute="leading" constant="16" id="HSW-jM-UqH"/>
+                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="cV9-Io-Avj" secondAttribute="bottom" constant="20" id="Jnc-gk-4Vc"/>
+                <constraint firstItem="cV9-Io-Avj" firstAttribute="centerX" secondItem="8ST-Ji-mcj" secondAttribute="centerX" id="LeP-eV-jzi"/>
+                <constraint firstItem="cV9-Io-Avj" firstAttribute="top" relation="greaterThanOrEqual" secondItem="VHB-rB-fkw" secondAttribute="top" constant="20" id="TU3-e4-ehK"/>
+                <constraint firstAttribute="trailing" secondItem="cV9-Io-Avj" secondAttribute="trailing" constant="16" id="njI-FA-CUC"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="137.68115942028987" y="79.6875"/>
+        </view>
+    </objects>
+    <designables>
+        <designable name="SRa-3o-lYK"/>
+        <designable name="UbM-av-K2C"/>
+        <designable name="Xwp-uh-KXF"/>
+        <designable name="YB5-2r-HYu">
+            <size key="intrinsicContentSize" width="30" height="34"/>
+        </designable>
+        <designable name="a87-VC-elO">
+            <size key="intrinsicContentSize" width="30" height="34"/>
+        </designable>
+    </designables>
+    <resources>
+        <namedColor name="colorBackground">
+            <color red="0.88999998569488525" green="0.88999998569488525" blue="0.88999998569488525" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="colorPrimary">
+            <color red="0.54900002479553223" green="0.0" blue="0.20000000298023224" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="textColorAccent">
+            <color red="0.0" green="0.18799999356269836" blue="0.52899998426437378" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="textColorPrimary">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="textColorPrimaryDark">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

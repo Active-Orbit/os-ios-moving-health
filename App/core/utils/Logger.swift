@@ -1,0 +1,72 @@
+//
+//  Logger.swift
+//  BaseApp
+//
+//  Created by Omar Brugna on 11/06/2020.
+//  Copyright © 2020 Active Orbit. All rights reserved.
+//
+
+import Foundation
+
+/**
+ Utility class to log with tag and colours
+ */
+public class Logger {
+    
+    public static let TAG = "BaseApp:"
+    public static let LOG_ENABLED = true
+    
+    public static func d(_ string : String?) {
+        d(TAG, string)
+    }
+    
+    public static func i(_ string : String?) {
+        i(TAG, string)
+    }
+    
+    public static func w(_ string : String?) {
+        w(TAG, string)
+    }
+    
+    public static func e(_ string : String?) {
+        e(TAG, string)
+    }
+    
+    public static func o(_ object: Any?) {
+        o(TAG, object)
+    }
+    
+    public static func d(_ tag : String, _ string : String?) {
+        if LOG_ENABLED {
+            print("⚪ \(tag) \(string ?? Constants.EMPTY)")
+        }
+    }
+    
+    public static func i(_ tag : String, _ string : String?) {
+        if LOG_ENABLED {
+            print("🔵 \(tag) \(string ?? Constants.EMPTY)")
+        }
+    }
+    
+    public static func w(_ tag : String, _ string : String?) {
+        if LOG_ENABLED {
+            print("🟡 \(tag) \(string ?? Constants.EMPTY)")
+        }
+    }
+    
+    public static func e(_ tag : String, _ string : String?) {
+        if LOG_ENABLED {
+            print("🔴 \(tag) \(string ?? Constants.EMPTY)")
+        }
+    }
+    
+    public static func o(_ tag : String, _ object: Any?) {
+        if LOG_ENABLED {
+            if object != nil {
+                print("⚫ \(tag) \(object!)")
+            } else {
+                print("🔴 \(tag) Trying to log a nil object")
+            }
+        }
+    }
+}

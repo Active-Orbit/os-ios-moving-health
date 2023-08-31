@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21507"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BottomNavigationComponent" customModule="MovingHealth" customModuleProvider="target">
+            <connections>
+                <outlet property="navHealth" destination="R4E-x3-qOG" id="hLG-9d-gfD"/>
+                <outlet property="navMain" destination="TMF-15-7ud" id="Pxt-7V-r0x"/>
+                <outlet property="navTrips" destination="Ji6-3C-ZiD" id="Fff-0F-Y27"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="oIa-dl-Ogm" customClass="BaseView" customModule="ActiveOrbit" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="537" height="100"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ji6-3C-ZiD" userLabel="navTrips" customClass="BottomNavItemComponent" customModule="MovingHealth" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="30" width="179" height="70"/>
+                    <color key="backgroundColor" name="colorPrimary"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="70" id="aKB-Kk-STr"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yHF-Q8-6VJ" userLabel="Space">
+                    <rect key="frame" x="179" y="30" width="179" height="70"/>
+                    <color key="backgroundColor" name="colorPrimary"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R4E-x3-qOG" userLabel="navHealth" customClass="BottomNavItemComponent" customModule="MovingHealth" customModuleProvider="target">
+                    <rect key="frame" x="358" y="30" width="179" height="70"/>
+                    <color key="backgroundColor" name="colorPrimary"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TMF-15-7ud" userLabel="navMain" customClass="BottomNavItemComponent" customModule="MovingHealth" customModuleProvider="target">
+                    <rect key="frame" x="208.66666666666663" y="10" width="120" height="90"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="90" id="KSc-gM-b3A"/>
+                        <constraint firstAttribute="width" constant="120" id="yXe-pM-5d6"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <constraints>
+                <constraint firstItem="R4E-x3-qOG" firstAttribute="width" secondItem="Ji6-3C-ZiD" secondAttribute="width" id="7g6-Wo-kQ8"/>
+                <constraint firstItem="yHF-Q8-6VJ" firstAttribute="height" secondItem="Ji6-3C-ZiD" secondAttribute="height" id="8ar-dN-WAb"/>
+                <constraint firstAttribute="bottom" secondItem="R4E-x3-qOG" secondAttribute="bottom" id="FQY-oP-AdO"/>
+                <constraint firstItem="yHF-Q8-6VJ" firstAttribute="width" secondItem="Ji6-3C-ZiD" secondAttribute="width" id="FkZ-99-Ltc"/>
+                <constraint firstItem="R4E-x3-qOG" firstAttribute="height" secondItem="Ji6-3C-ZiD" secondAttribute="height" id="LCb-ss-OHT"/>
+                <constraint firstAttribute="bottom" secondItem="Ji6-3C-ZiD" secondAttribute="bottom" id="OUM-NQ-al0"/>
+                <constraint firstAttribute="bottom" secondItem="TMF-15-7ud" secondAttribute="bottom" id="WeA-MW-mCa"/>
+                <constraint firstItem="yHF-Q8-6VJ" firstAttribute="leading" secondItem="Ji6-3C-ZiD" secondAttribute="trailing" id="aPd-iE-fnR"/>
+                <constraint firstItem="R4E-x3-qOG" firstAttribute="leading" secondItem="yHF-Q8-6VJ" secondAttribute="trailing" id="cvB-aB-gf3"/>
+                <constraint firstAttribute="bottom" secondItem="yHF-Q8-6VJ" secondAttribute="bottom" id="lID-q1-yiD"/>
+                <constraint firstAttribute="trailing" secondItem="R4E-x3-qOG" secondAttribute="trailing" id="lZ0-b0-yWH"/>
+                <constraint firstItem="Ji6-3C-ZiD" firstAttribute="leading" secondItem="oIa-dl-Ogm" secondAttribute="leading" id="uMv-AJ-yRW"/>
+                <constraint firstItem="TMF-15-7ud" firstAttribute="centerX" secondItem="oIa-dl-Ogm" secondAttribute="centerX" id="wA2-4f-O3w"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="80.434782608695656" y="77.678571428571431"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="colorPrimary">
+            <color red="0.54900002479553223" green="0.0" blue="0.20000000298023224" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

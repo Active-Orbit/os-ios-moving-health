@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HealthCell" customModule="MovingHealth" customModuleProvider="target">
+            <connections>
+                <outlet property="container" destination="MOp-KE-6T5" id="h8w-G9-AMv"/>
+                <outlet property="healthScore" destination="mrv-9q-uza" id="1JP-Fm-X4E"/>
+                <outlet property="healthScoreProgressBar" destination="Mfm-Af-iK1" id="Asv-M1-baL"/>
+                <outlet property="iconView" destination="cXM-eZ-5Zm" id="7If-W3-al2"/>
+                <outlet property="timestamp" destination="WQu-7p-7in" id="kcr-Lm-PTZ"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="NKe-Qw-uG5" customClass="BaseView" customModule="MovingHealth" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="118"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MOp-KE-6T5" customClass="BaseView" customModule="MovingHealth" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="102"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FTk-R8-pJ9" userLabel="detailsView" customClass="BaseView" customModule="MovingHealth" customModuleProvider="target">
+                            <rect key="frame" x="16" y="16" width="313" height="70"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="60/100" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mrv-9q-uza" customClass="BaseLabel" customModule="MovingHealth" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="313" height="13.666666666666666"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" name="textColorBlack"/>
+                                    <nil key="highlightedColor"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="textSize">
+                                            <real key="value" value="5"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="textFont">
+                                            <real key="value" value="3"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </label>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mfm-Af-iK1" customClass="HorizontalProgressBar" customModule="MovingHealth" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="21.666666666666664" width="313" height="20"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="20" id="Nk9-3W-3Ry"/>
+                                    </constraints>
+                                </view>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Filled In" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WQu-7p-7in" customClass="BaseLabel" customModule="MovingHealth" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="49.666666666666671" width="313" height="20.333333333333329"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" name="textColorGray"/>
+                                    <nil key="highlightedColor"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="textSize">
+                                            <real key="value" value="6"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="textFont">
+                                            <real key="value" value="3"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" name="white"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="WQu-7p-7in" secondAttribute="trailing" id="3Kz-FH-ljs"/>
+                                <constraint firstAttribute="trailing" secondItem="Mfm-Af-iK1" secondAttribute="trailing" id="8Yh-yU-bIK"/>
+                                <constraint firstItem="mrv-9q-uza" firstAttribute="top" secondItem="FTk-R8-pJ9" secondAttribute="top" id="KYo-6I-IC7"/>
+                                <constraint firstItem="mrv-9q-uza" firstAttribute="leading" secondItem="FTk-R8-pJ9" secondAttribute="leading" id="Q9f-6W-C8p"/>
+                                <constraint firstItem="Mfm-Af-iK1" firstAttribute="top" secondItem="mrv-9q-uza" secondAttribute="bottom" constant="8" id="Qcl-PZ-9cj"/>
+                                <constraint firstAttribute="trailing" secondItem="mrv-9q-uza" secondAttribute="trailing" id="Xqb-j4-JJv"/>
+                                <constraint firstItem="Mfm-Af-iK1" firstAttribute="leading" secondItem="FTk-R8-pJ9" secondAttribute="leading" id="ZHq-hk-0R5"/>
+                                <constraint firstAttribute="bottom" secondItem="WQu-7p-7in" secondAttribute="bottom" id="eLC-t5-iHY"/>
+                                <constraint firstItem="WQu-7p-7in" firstAttribute="top" secondItem="Mfm-Af-iK1" secondAttribute="bottom" constant="8" id="ov0-sd-baX"/>
+                                <constraint firstItem="WQu-7p-7in" firstAttribute="leading" secondItem="FTk-R8-pJ9" secondAttribute="leading" id="qNk-dA-79c"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cXM-eZ-5Zm" userLabel="arrowView" customClass="BaseView" customModule="MovingHealth" customModuleProvider="target">
+                            <rect key="frame" x="345" y="0.0" width="48" height="102"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_arrow_right_white" translatesAutoresizingMaskIntoConstraints="NO" id="1YQ-cd-yFu" customClass="BaseImageView" customModule="MovingHealth" customModuleProvider="target">
+                                    <rect key="frame" x="8" y="35" width="32" height="32"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="32" id="029-j1-691"/>
+                                        <constraint firstAttribute="height" constant="32" id="wZD-iY-Alw"/>
+                                    </constraints>
+                                </imageView>
+                            </subviews>
+                            <color key="backgroundColor" name="colorPrimary"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="48" id="MEl-uD-Apb"/>
+                                <constraint firstItem="1YQ-cd-yFu" firstAttribute="centerX" secondItem="cXM-eZ-5Zm" secondAttribute="centerX" id="Nxy-hD-XB9"/>
+                                <constraint firstItem="1YQ-cd-yFu" firstAttribute="centerY" secondItem="cXM-eZ-5Zm" secondAttribute="centerY" id="Qh8-Ww-Vb4"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" name="white"/>
+                    <constraints>
+                        <constraint firstItem="FTk-R8-pJ9" firstAttribute="top" secondItem="MOp-KE-6T5" secondAttribute="top" constant="16" id="3UE-jP-q4i"/>
+                        <constraint firstItem="cXM-eZ-5Zm" firstAttribute="leading" secondItem="FTk-R8-pJ9" secondAttribute="trailing" constant="16" id="FDd-e2-az6"/>
+                        <constraint firstItem="FTk-R8-pJ9" firstAttribute="leading" secondItem="MOp-KE-6T5" secondAttribute="leading" constant="16" id="Jpe-5r-wgu"/>
+                        <constraint firstAttribute="bottom" secondItem="FTk-R8-pJ9" secondAttribute="bottom" constant="16" id="MpB-gs-zmG"/>
+                        <constraint firstAttribute="bottom" secondItem="cXM-eZ-5Zm" secondAttribute="bottom" id="QbC-0t-MGB"/>
+                        <constraint firstItem="cXM-eZ-5Zm" firstAttribute="top" secondItem="MOp-KE-6T5" secondAttribute="top" id="Se0-Qd-FhX"/>
+                        <constraint firstAttribute="trailing" secondItem="cXM-eZ-5Zm" secondAttribute="trailing" id="dNj-fc-Qqn"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="MOp-KE-6T5" secondAttribute="bottom" constant="16" id="1kQ-JD-vhv"/>
+                <constraint firstItem="MOp-KE-6T5" firstAttribute="leading" secondItem="NKe-Qw-uG5" secondAttribute="leading" id="7US-gw-YkC"/>
+                <constraint firstItem="MOp-KE-6T5" firstAttribute="top" secondItem="NKe-Qw-uG5" secondAttribute="top" id="DZo-aJ-sT8"/>
+                <constraint firstAttribute="trailing" secondItem="MOp-KE-6T5" secondAttribute="trailing" id="nS8-4P-528"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="130.53435114503816" y="133.45070422535213"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="ic_arrow_right_white" width="17" height="22"/>
+        <namedColor name="colorPrimary">
+            <color red="0.54900002479553223" green="0.0" blue="0.20000000298023224" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="textColorBlack">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="textColorGray">
+            <color red="0.57999998331069946" green="0.57999998331069946" blue="0.57999998331069946" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="white">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

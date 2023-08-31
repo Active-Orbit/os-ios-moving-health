@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BaseSpinner" customModule="BaseApp" customModuleProvider="target">
+            <connections>
+                <outlet property="spinnerIcon" destination="Neb-ji-rBI" id="uzS-ou-6jz"/>
+                <outlet property="spinnerLabel" destination="oI1-RN-7j7" id="bZh-3C-kfd"/>
+                <outlet property="spinnerView" destination="z8z-so-Txu" id="ufi-W5-l7L"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="z8z-so-Txu">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="149"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oI1-RN-7j7" userLabel="SpinnerLabel" customClass="BaseLabel" customModule="BaseApp" customModuleProvider="target">
+                    <rect key="frame" x="16" y="74.5" width="348" height="0.0"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" name="textColorDark"/>
+                    <nil key="highlightedColor"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="textSize">
+                            <real key="value" value="3"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="textFont">
+                            <real key="value" value="0.0"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </label>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_arrow_down_black" translatesAutoresizingMaskIntoConstraints="NO" id="Neb-ji-rBI" userLabel="SpinnerIcon" customClass="BaseImageView" customModule="BaseApp" customModuleProvider="target">
+                    <rect key="frame" x="380" y="65.5" width="18" height="18"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="18" id="0cS-XV-uJG"/>
+                        <constraint firstAttribute="width" constant="18" id="VtA-Ec-gOa"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" name="colorPrimaryLight"/>
+            <constraints>
+                <constraint firstItem="oI1-RN-7j7" firstAttribute="centerY" secondItem="z8z-so-Txu" secondAttribute="centerY" id="2jO-gn-Vge"/>
+                <constraint firstItem="Neb-ji-rBI" firstAttribute="centerY" secondItem="z8z-so-Txu" secondAttribute="centerY" id="7YM-Zt-6cM"/>
+                <constraint firstItem="Neb-ji-rBI" firstAttribute="leading" secondItem="oI1-RN-7j7" secondAttribute="trailing" constant="16" id="9rX-uO-v5V"/>
+                <constraint firstItem="oI1-RN-7j7" firstAttribute="leading" secondItem="z8z-so-Txu" secondAttribute="leading" constant="16" id="J1k-4T-RAj"/>
+                <constraint firstAttribute="trailing" secondItem="Neb-ji-rBI" secondAttribute="trailing" constant="16" id="mgZ-sJ-hlF"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-526" y="-61"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="ic_arrow_down_black" width="128" height="128"/>
+        <namedColor name="colorPrimaryLight">
+            <color red="0.32899999618530273" green="0.32400000095367432" blue="0.4779999852180481" alpha="0.33000001311302185" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="textColorDark">
+            <color red="0.32899999618530273" green="0.32400000095367432" blue="0.4779999852180481" alpha="0.33000001311302185" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

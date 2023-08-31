@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SexCell" customModule="MovingHealth" customModuleProvider="target">
+            <connections>
+                <outlet property="sexText" destination="Ibi-Gg-Gyx" id="yoJ-Wi-JKz"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lHo-Jt-hmi" customClass="BaseView" customModule="MovingHealth" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="58"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W95-ts-pAr" customClass="BaseView" customModule="MovingHealth" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="58"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="dsdds" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ibi-Gg-Gyx" userLabel="Label" customClass="BaseLabel" customModule="MovingHealth" customModuleProvider="target">
+                            <rect key="frame" x="16" y="24" width="47" height="20.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" name="textColorPrimaryDark"/>
+                            <nil key="highlightedColor"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="textSize">
+                                    <real key="value" value="5"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="textFont">
+                                    <real key="value" value="2"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b9z-MG-gsT" userLabel="Stroke">
+                            <rect key="frame" x="16" y="52" width="327" height="1"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1" id="tWg-5Q-Ojs"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" name="colorBackground"/>
+                    <constraints>
+                        <constraint firstItem="Ibi-Gg-Gyx" firstAttribute="leading" secondItem="W95-ts-pAr" secondAttribute="leading" constant="16" id="5ru-xf-RC0"/>
+                        <constraint firstAttribute="trailing" secondItem="b9z-MG-gsT" secondAttribute="trailing" constant="50" id="CDM-cb-Upd"/>
+                        <constraint firstAttribute="bottom" secondItem="b9z-MG-gsT" secondAttribute="bottom" constant="5" id="G1i-UA-Gyw"/>
+                        <constraint firstItem="Ibi-Gg-Gyx" firstAttribute="top" secondItem="W95-ts-pAr" secondAttribute="top" constant="24" id="Q5m-Ei-QDf"/>
+                        <constraint firstItem="b9z-MG-gsT" firstAttribute="leading" secondItem="W95-ts-pAr" secondAttribute="leading" constant="16" id="r82-bZ-Y4i"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="W95-ts-pAr" secondAttribute="trailing" id="Gml-XP-NaJ"/>
+                <constraint firstAttribute="height" constant="58" id="eqK-Ji-z3F"/>
+                <constraint firstAttribute="bottom" secondItem="W95-ts-pAr" secondAttribute="bottom" id="kQw-qH-PDj"/>
+                <constraint firstItem="W95-ts-pAr" firstAttribute="top" secondItem="lHo-Jt-hmi" secondAttribute="top" id="lpf-fj-fl4"/>
+                <constraint firstItem="W95-ts-pAr" firstAttribute="leading" secondItem="lHo-Jt-hmi" secondAttribute="leading" id="ua2-RR-uce"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="129.71014492753625" y="129.24107142857142"/>
+        </view>
+    </objects>
+    <designables>
+        <designable name="Ibi-Gg-Gyx">
+            <size key="intrinsicContentSize" width="47" height="20.5"/>
+        </designable>
+    </designables>
+    <resources>
+        <namedColor name="colorBackground">
+            <color red="0.88999998569488525" green="0.88999998569488525" blue="0.88999998569488525" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="textColorPrimaryDark">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

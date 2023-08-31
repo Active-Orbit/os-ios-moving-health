@@ -1,0 +1,12 @@
+/* 
+  InfoPlist.strings
+  App
+
+  Created by Omar Brugna on 31/07/23.
+  Copyright © 2023 Active Orbit. All rights reserved.
+*/
+
+"NSLocationWhenInUseUsageDescription" = "The location access is needed to improve the activities tracking";
+"NSLocationAlwaysUsageDescription" = "The location access is needed to improve the activities tracking when the app runs in background";
+"NSLocationAlwaysAndWhenInUseUsageDescription" = "The location access is needed to improve the activities tracking when the app is not in use";
+"NSMotionUsageDescription" = "The motion and fitness data access is needed to correctly identify the daily activities";

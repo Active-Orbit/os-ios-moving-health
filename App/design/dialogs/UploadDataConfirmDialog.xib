@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UploadDataConfirmDialog" customModule="MovingHealth" customModuleProvider="target">
+            <connections>
+                <outlet property="cancelButton" destination="YiU-l2-PX9" id="IR9-OX-P5F"/>
+                <outlet property="confirmButton" destination="nhU-p3-MMW" id="yiV-W6-jQL"/>
+                <outlet property="dialogContainer" destination="Fs2-CA-OVh" id="kfl-5r-x34"/>
+                <outlet property="title" destination="ye0-6W-f5M" id="9H2-f1-LgK"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clipsSubviews="YES" contentMode="scaleToFill" id="mFe-Mc-OkT" customClass="BaseView" customModule="MovingHealth" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fs2-CA-OVh" userLabel="DialogView" customClass="BaseView" customModule="MovingHealth" customModuleProvider="target">
+                    <rect key="frame" x="25" y="387" width="364" height="122"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ye0-6W-f5M" userLabel="title" customClass="BaseLabel" customModule="MovingHealth" customModuleProvider="target">
+                            <rect key="frame" x="25" y="25" width="314" height="0.0"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" name="textColorPrimaryDark"/>
+                            <nil key="highlightedColor"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="localizedText" value="redeem_confirm_dialog_title"/>
+                                <userDefinedRuntimeAttribute type="number" keyPath="textSize">
+                                    <real key="value" value="15"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="textFont">
+                                    <real key="value" value="0.0"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </label>
+                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="39v-h8-688" customClass="BaseStackView" customModule="MovingHealth" customModuleProvider="target">
+                            <rect key="frame" x="25" y="45" width="314" height="52"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YiU-l2-PX9" userLabel="cancelButton" customClass="BaseButton" customModule="MovingHealth" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="150" height="52"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="52" id="fQH-c3-9Vm"/>
+                                    </constraints>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="localizedTitle" value="cancel"/>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="type">
+                                            <integer key="value" value="2"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="textSize">
+                                            <real key="value" value="13"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="textFont">
+                                            <real key="value" value="2"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </button>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fuG-35-bxk" userLabel="Space">
+                                    <rect key="frame" x="150" y="0.0" width="14" height="52"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="14" id="ele-dT-5zl"/>
+                                    </constraints>
+                                </view>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nhU-p3-MMW" userLabel="confirmButton" customClass="BaseButton" customModule="MovingHealth" customModuleProvider="target">
+                                    <rect key="frame" x="164" y="0.0" width="150" height="52"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="52" id="WBw-4S-GSM"/>
+                                    </constraints>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="string" keyPath="localizedTitle" value="confirm"/>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="type">
+                                            <integer key="value" value="1"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="textSize">
+                                            <real key="value" value="13"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="textFont">
+                                            <real key="value" value="2"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </button>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="nhU-p3-MMW" firstAttribute="width" secondItem="YiU-l2-PX9" secondAttribute="width" id="C5H-LV-xdZ"/>
+                                <constraint firstAttribute="height" constant="52" id="CgM-Pc-24W"/>
+                                <constraint firstItem="YiU-l2-PX9" firstAttribute="height" secondItem="39v-h8-688" secondAttribute="height" id="DYq-8W-EPE"/>
+                                <constraint firstItem="nhU-p3-MMW" firstAttribute="height" secondItem="YiU-l2-PX9" secondAttribute="height" id="EhV-Nx-opj"/>
+                                <constraint firstAttribute="bottom" secondItem="fuG-35-bxk" secondAttribute="bottom" id="EwK-tZ-0rt"/>
+                                <constraint firstItem="YiU-l2-PX9" firstAttribute="top" secondItem="39v-h8-688" secondAttribute="top" id="FLR-5I-I2t"/>
+                                <constraint firstItem="fuG-35-bxk" firstAttribute="top" secondItem="39v-h8-688" secondAttribute="top" id="Fpc-dD-McE"/>
+                                <constraint firstItem="fuG-35-bxk" firstAttribute="centerX" secondItem="39v-h8-688" secondAttribute="centerX" id="KEb-vy-hg4"/>
+                                <constraint firstAttribute="bottom" secondItem="YiU-l2-PX9" secondAttribute="bottom" id="OKO-cy-S7O"/>
+                                <constraint firstItem="nhU-p3-MMW" firstAttribute="leading" secondItem="fuG-35-bxk" secondAttribute="trailing" id="Z8K-No-dUC"/>
+                                <constraint firstItem="YiU-l2-PX9" firstAttribute="leading" secondItem="39v-h8-688" secondAttribute="leading" id="cdS-Vu-P1U"/>
+                                <constraint firstAttribute="bottom" secondItem="nhU-p3-MMW" secondAttribute="bottom" id="imu-Sv-KNR"/>
+                                <constraint firstItem="nhU-p3-MMW" firstAttribute="top" secondItem="39v-h8-688" secondAttribute="top" id="lli-c0-3VO"/>
+                                <constraint firstItem="fuG-35-bxk" firstAttribute="leading" secondItem="YiU-l2-PX9" secondAttribute="trailing" id="m1e-eh-wbB"/>
+                                <constraint firstAttribute="trailing" secondItem="nhU-p3-MMW" secondAttribute="trailing" id="nbY-fU-YwV"/>
+                                <constraint firstItem="fuG-35-bxk" firstAttribute="centerY" secondItem="39v-h8-688" secondAttribute="centerY" id="rVi-Xe-5Tw"/>
+                            </constraints>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" name="colorBackground"/>
+                    <constraints>
+                        <constraint firstItem="39v-h8-688" firstAttribute="top" secondItem="ye0-6W-f5M" secondAttribute="bottom" constant="20" id="9Ae-bN-4X4"/>
+                        <constraint firstItem="ye0-6W-f5M" firstAttribute="top" secondItem="Fs2-CA-OVh" secondAttribute="top" constant="25" id="FFh-v2-wec"/>
+                        <constraint firstAttribute="trailing" secondItem="39v-h8-688" secondAttribute="trailing" constant="25" id="Fh0-eu-ebz"/>
+                        <constraint firstItem="ye0-6W-f5M" firstAttribute="leading" secondItem="Fs2-CA-OVh" secondAttribute="leading" constant="25" id="X3S-Ie-DWB"/>
+                        <constraint firstAttribute="trailing" secondItem="ye0-6W-f5M" secondAttribute="trailing" constant="25" id="aJI-Rv-nIk"/>
+                        <constraint firstItem="ye0-6W-f5M" firstAttribute="centerX" secondItem="Fs2-CA-OVh" secondAttribute="centerX" id="agR-Ys-wyr"/>
+                        <constraint firstItem="39v-h8-688" firstAttribute="centerX" secondItem="Fs2-CA-OVh" secondAttribute="centerX" id="h5V-at-i4H"/>
+                        <constraint firstAttribute="bottom" secondItem="39v-h8-688" secondAttribute="bottom" constant="25" id="pW5-hn-fgF"/>
+                        <constraint firstItem="39v-h8-688" firstAttribute="leading" secondItem="Fs2-CA-OVh" secondAttribute="leading" constant="25" id="u9x-XU-dom"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <constraints>
+                <constraint firstItem="Fs2-CA-OVh" firstAttribute="leading" secondItem="mFe-Mc-OkT" secondAttribute="leading" constant="25" id="K05-Ag-Env"/>
+                <constraint firstItem="Fs2-CA-OVh" firstAttribute="top" relation="greaterThanOrEqual" secondItem="mFe-Mc-OkT" secondAttribute="top" constant="20" id="K4O-Bb-3sP"/>
+                <constraint firstAttribute="trailing" secondItem="Fs2-CA-OVh" secondAttribute="trailing" constant="25" id="PWy-QO-a72"/>
+                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Fs2-CA-OVh" secondAttribute="bottom" constant="20" id="UI8-LM-nX1"/>
+                <constraint firstItem="Fs2-CA-OVh" firstAttribute="centerY" secondItem="mFe-Mc-OkT" secondAttribute="centerY" id="zYC-1B-j2p"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="137.68115942028987" y="79.6875"/>
+        </view>
+    </objects>
+    <designables>
+        <designable name="YiU-l2-PX9">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="nhU-p3-MMW">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="ye0-6W-f5M"/>
+    </designables>
+    <resources>
+        <namedColor name="colorBackground">
+            <color red="0.88999998569488525" green="0.88999998569488525" blue="0.88999998569488525" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="textColorPrimaryDark">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

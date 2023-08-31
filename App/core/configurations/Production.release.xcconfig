@@ -1,0 +1,16 @@
+//
+//  Production.release.xcconfig
+//  App
+//
+//  Created by Omar Brugna on 04/04/23.
+//  Copyright © 2023 Active Orbit. All rights reserved.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+#include "Pods/Target Support Files/Pods-MovingHealth/Pods-MovingHealth.release.xcconfig"
+
+APP_NAME = MovingHealth
+BASE_URL = YOUR_PROD_URL
+GOOGLE_API_KEY = YOUR_GOOGLE_API_KEY_HERE

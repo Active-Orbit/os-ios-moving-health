@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainPanelComponent" customModule="MovingHealth" customModuleProvider="target">
+            <connections>
+                <outlet property="mainView" destination="iN0-l3-epB" id="sBs-Un-fes"/>
+                <outlet property="panelButton" destination="KzF-kT-yEP" id="g1Z-Vs-DEz"/>
+                <outlet property="panelDescription" destination="I74-cx-CzO" id="4Gk-3V-4dC"/>
+                <outlet property="panelIcon" destination="2h8-Jo-TPC" id="Jhf-ob-LXz"/>
+                <outlet property="panelImage" destination="pNw-9J-8BA" id="2cJ-Lk-aEy"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iN0-l3-epB" customClass="BaseView" customModule="MovingHealth" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="415" height="332"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_panel_tour" translatesAutoresizingMaskIntoConstraints="NO" id="pNw-9J-8BA" userLabel="PanelImage" customClass="BaseImageView" customModule="MovingHealth" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="415" height="165"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="165" id="0GW-Ma-CP8"/>
+                    </constraints>
+                </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wj8-U1-z1H" userLabel="PanelOverlay">
+                    <rect key="frame" x="0.0" y="0.0" width="415" height="165"/>
+                    <color key="backgroundColor" name="black25opacity"/>
+                </view>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_app_logo_alpha" translatesAutoresizingMaskIntoConstraints="NO" id="2h8-Jo-TPC" userLabel="PanelIcon" customClass="BaseImageView" customModule="MovingHealth" customModuleProvider="target">
+                    <rect key="frame" x="367" y="16" width="32" height="32"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="32" id="JFS-na-RU9"/>
+                        <constraint firstAttribute="height" constant="32" id="cmm-Gx-mJp"/>
+                    </constraints>
+                </imageView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_heartbeats" translatesAutoresizingMaskIntoConstraints="NO" id="fMj-PG-Srj" userLabel="PanelHeartBeats" customClass="BaseImageView" customModule="MovingHealth" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="83" width="415" height="120"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="120" id="rt4-VW-zWd"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I74-cx-CzO" userLabel="PanelDescription" customClass="BaseLabel" customModule="MovingHealth" customModuleProvider="target">
+                    <rect key="frame" x="16" y="235" width="383" height="0.0"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" name="textColorPrimaryDark"/>
+                    <nil key="highlightedColor"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="textSize">
+                            <real key="value" value="16"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="textFont">
+                            <real key="value" value="0.0"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="string" keyPath="localizedText" value="tour_description"/>
+                    </userDefinedRuntimeAttributes>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KzF-kT-yEP" userLabel="PanelButton" customClass="BaseButton" customModule="MovingHealth" customModuleProvider="target">
+                    <rect key="frame" x="369" y="267" width="30" height="45"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="45" id="tbo-br-AH2"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="textSize">
+                            <real key="value" value="2"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="textFont">
+                            <real key="value" value="0.0"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="type">
+                            <integer key="value" value="0"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="string" keyPath="localizedTitle" value="get_started"/>
+                    </userDefinedRuntimeAttributes>
+                </button>
+            </subviews>
+            <color key="backgroundColor" name="white"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="I74-cx-CzO" secondAttribute="trailing" constant="16" id="3jw-8c-8yP"/>
+                <constraint firstAttribute="trailing" secondItem="fMj-PG-Srj" secondAttribute="trailing" id="84T-9Z-8D6"/>
+                <constraint firstAttribute="bottom" secondItem="KzF-kT-yEP" secondAttribute="bottom" constant="20" id="8fN-9s-PhD"/>
+                <constraint firstItem="fMj-PG-Srj" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Ax9-Jz-ZvZ"/>
+                <constraint firstItem="Wj8-U1-z1H" firstAttribute="top" secondItem="pNw-9J-8BA" secondAttribute="top" id="JeC-re-rd8"/>
+                <constraint firstItem="pNw-9J-8BA" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="O0N-3P-jam"/>
+                <constraint firstItem="Wj8-U1-z1H" firstAttribute="trailing" secondItem="pNw-9J-8BA" secondAttribute="trailing" id="PNV-mo-Y24"/>
+                <constraint firstItem="I74-cx-CzO" firstAttribute="top" secondItem="fMj-PG-Srj" secondAttribute="bottom" constant="32" id="TLe-ag-ZUI"/>
+                <constraint firstAttribute="trailing" secondItem="KzF-kT-yEP" secondAttribute="trailing" constant="16" id="bSr-n6-OCK"/>
+                <constraint firstItem="KzF-kT-yEP" firstAttribute="top" secondItem="I74-cx-CzO" secondAttribute="bottom" constant="32" id="deD-Dg-flo"/>
+                <constraint firstItem="I74-cx-CzO" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="dqC-ts-wuk"/>
+                <constraint firstItem="Wj8-U1-z1H" firstAttribute="leading" secondItem="pNw-9J-8BA" secondAttribute="leading" id="eyZ-rc-D4h"/>
+                <constraint firstAttribute="trailing" secondItem="2h8-Jo-TPC" secondAttribute="trailing" constant="16" id="kEh-ve-byy"/>
+                <constraint firstItem="2h8-Jo-TPC" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="16" id="lEK-t7-beV"/>
+                <constraint firstAttribute="trailing" secondItem="pNw-9J-8BA" secondAttribute="trailing" id="uY1-Zi-Spm"/>
+                <constraint firstItem="Wj8-U1-z1H" firstAttribute="height" secondItem="pNw-9J-8BA" secondAttribute="height" id="xes-bl-3o2"/>
+                <constraint firstItem="fMj-PG-Srj" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="83" id="xkh-nE-MZx"/>
+                <constraint firstItem="pNw-9J-8BA" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="yda-f0-r8j"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-100" y="144.71830985915494"/>
+        </view>
+    </objects>
+    <designables>
+        <designable name="I74-cx-CzO"/>
+        <designable name="KzF-kT-yEP">
+            <size key="intrinsicContentSize" width="30" height="34"/>
+        </designable>
+    </designables>
+    <resources>
+        <image name="bg_heartbeats" width="3938" height="1118"/>
+        <image name="bg_panel_tour" width="1280" height="1920"/>
+        <image name="ic_app_logo_alpha" width="193.33332824707031" height="156.66667175292969"/>
+        <namedColor name="black25opacity">
+            <color red="0.0" green="0.0" blue="0.0" alpha="0.25" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="textColorPrimaryDark">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="white">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

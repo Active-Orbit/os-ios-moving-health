@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="QuestionCell" customModule="MovingHealth" customModuleProvider="target">
+            <connections>
+                <outlet property="checkBox" destination="Esi-Kb-XfI" id="U9J-YT-f9O"/>
+                <outlet property="container" destination="FOi-Qr-8kz" id="5yw-HS-HYt"/>
+                <outlet property="label" destination="v8n-9L-ZBU" id="84j-81-9CX"/>
+                <outlet property="mainView" destination="AOc-ge-Hkr" id="UWn-aI-Tli"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AOc-ge-Hkr" customClass="BaseView" customModule="MovingHealth" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="212" height="130"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v8n-9L-ZBU" userLabel="Label" customClass="BaseLabel" customModule="MovingHealth" customModuleProvider="target">
+                    <rect key="frame" x="16" y="65" width="132" height="0.0"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" name="textColorPrimaryDark"/>
+                    <nil key="highlightedColor"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="textSize">
+                            <real key="value" value="5"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="textFont">
+                            <real key="value" value="0.0"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="string" keyPath="localizedText" value="select"/>
+                    </userDefinedRuntimeAttributes>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FOi-Qr-8kz" userLabel="Container" customClass="BaseView" customModule="MovingHealth" customModuleProvider="target">
+                    <rect key="frame" x="164" y="41" width="48" height="48"/>
+                    <subviews>
+                        <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Esi-Kb-XfI" userLabel="CheckBox" customClass="BaseCheckBox" customModule="MovingHealth" customModuleProvider="target">
+                            <rect key="frame" x="12" y="12" width="24" height="24"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="24" id="5Jx-DE-eJr"/>
+                                <constraint firstAttribute="height" constant="24" id="v7e-UD-aGD"/>
+                            </constraints>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="48" id="3Tv-xz-LEp"/>
+                        <constraint firstItem="Esi-Kb-XfI" firstAttribute="centerY" secondItem="FOi-Qr-8kz" secondAttribute="centerY" id="78U-70-Xc1"/>
+                        <constraint firstItem="Esi-Kb-XfI" firstAttribute="centerX" secondItem="FOi-Qr-8kz" secondAttribute="centerX" id="Uo7-me-lf6"/>
+                        <constraint firstAttribute="width" constant="48" id="knX-zn-2FT"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <constraints>
+                <constraint firstItem="FOi-Qr-8kz" firstAttribute="centerY" secondItem="AOc-ge-Hkr" secondAttribute="centerY" id="1AL-YF-1j0"/>
+                <constraint firstItem="FOi-Qr-8kz" firstAttribute="leading" secondItem="v8n-9L-ZBU" secondAttribute="trailing" constant="16" id="2E1-6Y-7kl"/>
+                <constraint firstItem="v8n-9L-ZBU" firstAttribute="leading" secondItem="AOc-ge-Hkr" secondAttribute="leading" constant="16" id="Qmv-g3-dWX"/>
+                <constraint firstAttribute="trailing" secondItem="FOi-Qr-8kz" secondAttribute="trailing" id="RMe-oh-xBW"/>
+                <constraint firstItem="v8n-9L-ZBU" firstAttribute="centerY" secondItem="AOc-ge-Hkr" secondAttribute="centerY" id="VVf-8z-qcw"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="85" y="156"/>
+        </view>
+    </objects>
+    <designables>
+        <designable name="v8n-9L-ZBU"/>
+    </designables>
+    <resources>
+        <namedColor name="textColorPrimaryDark">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

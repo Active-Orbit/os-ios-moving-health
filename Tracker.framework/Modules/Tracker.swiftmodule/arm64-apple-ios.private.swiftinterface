@@ -1,0 +1,676 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.8.1 (swiftlang-5.8.0.124.5 clang-1403.0.22.11.100)
+// swift-module-flags: -target arm64-apple-ios12.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -Onone -module-name Tracker
+// swift-module-flags-ignorable: -enable-bare-slash-regex
+import Alamofire
+import CoreGraphics
+import CoreLocation
+import CoreMotion
+import Foundation
+import Realm/*.Realm*/
+import RealmSwift
+import Swift
+@_exported import Tracker
+import UIKit
+import _Concurrency
+import _StringProcessing
+@_hasMissingDesignatedInitializers public class TrackerString {
+  public static let TABLE_DEFAULT: Swift.String
+  public static func get(_ key: Swift.String, bundle: Foundation.Bundle = TrackerBundle.application, tableName: Swift.String = TABLE_DEFAULT) -> Swift.String
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class TrackerTableSummaries {
+  public static func getAll(trackerDetached: Swift.Bool = true) -> [Tracker.TrackerDBSummary]
+  public static func getById(_ summaryId: Swift.String, trackerDetached: Swift.Bool = true) -> Tracker.TrackerDBSummary?
+  public static func getByDate(_ date: Foundation.Date, trackerDetached: Swift.Bool = true) -> Tracker.TrackerDBSummary?
+  public static func getLastSent(trackerDetached: Swift.Bool = true) -> Tracker.TrackerDBSummary?
+  public static func getNotSent(_ maxDate: Foundation.Date, _ limit: Swift.Int = TrackerConstants.INVALID, trackerDetached: Swift.Bool = true) -> [Tracker.TrackerDBSummary]
+  public static func upsert(_ model: Tracker.TrackerDBSummary)
+  public static func upsert(_ models: [Tracker.TrackerDBSummary])
+  public static func truncate()
+  @objc deinit
+}
+public enum TrackerConnectionResult {
+  case STARTED
+  case SUCCESS
+  case ERROR
+  case COMPLETED
+  public static func == (a: Tracker.TrackerConnectionResult, b: Tracker.TrackerConnectionResult) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+@_hasMissingDesignatedInitializers public class TrackerBundle {
+  public static let application: Foundation.Bundle
+  public static let tracker: Foundation.Bundle
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class TrackerManager {
+  public static let instance: Tracker.TrackerManager
+  public static var config: Tracker.TrackerConfig? {
+    get
+    set
+  }
+  public static func initialize(launchOptions: [UIKit.UIApplication.LaunchOptionsKey : Any]?)
+  public func refresh(_ fromDate: Foundation.Date, _ toDate: Foundation.Date, _ listener: Tracker.TrackerClosureVoid? = nil)
+  public func setTargetApp(_ targetApp: Tracker.TrackerTargetApp)
+  public func saveUserRegistrationId(_ userId: Swift.String?, overrideFirstInstall: Swift.Bool = false)
+  public func logout()
+  @objc deinit
+}
+extension Tracker.TrackerManager {
+  public func startLocationTracking()
+  public func stopLocationTracking()
+}
+extension Tracker.TrackerManager {
+  public func locationServicesEnabled() -> Swift.Bool
+  public func locationAuthorizationStatus() -> CoreLocation.CLAuthorizationStatus
+  public func hasLocationAuthorizationAlways() -> Swift.Bool
+  public func hasLocationAuthorizationWhenInUse() -> Swift.Bool
+  public func requestLocationAuthorizationAlways(_ listener: @escaping Tracker.TrackerClosureBool)
+  public func requestLocationAuthorizationWhenInUse(_ listener: @escaping Tracker.TrackerClosureBool)
+}
+extension Tracker.TrackerManager {
+  public func motionActivityAvailable() -> Swift.Bool
+  public func motionAuthorizationStatus() -> CoreMotion.CMAuthorizationStatus
+  public func hasMotionAuthorization() -> Swift.Bool
+  public func requestMotionAuthorization(_ listener: @escaping Tracker.TrackerClosureBool)
+}
+extension Tracker.TrackerManager {
+  public func pedometerEventTrackingAvailable() -> Swift.Bool
+  public func pedometerAuthorizationStatus() -> CoreMotion.CMAuthorizationStatus
+  public func hasPedometerAuthorization() -> Swift.Bool
+  public func requestPedometerAuthorization(_ listener: @escaping Tracker.TrackerClosureBool)
+}
+public enum TrackerTargetApp : Swift.CaseIterable {
+  case OTHER
+  case S4S
+  case SETA
+  case AEQORA
+  case SKATEBOARD
+  case CORONA
+  case ACTIVE_ORBIT
+  case MOVING_HEALTH
+  public var id: Swift.Int {
+    get
+  }
+  public static func getById(_ id: Swift.Int?) -> Tracker.TrackerTargetApp
+  public static func == (a: Tracker.TrackerTargetApp, b: Tracker.TrackerTargetApp) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public typealias AllCases = [Tracker.TrackerTargetApp]
+  public static var allCases: [Tracker.TrackerTargetApp] {
+    get
+  }
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class TrackerDBActivity : Tracker.TrackerDBModel {
+  @objc dynamic public var activityId: Swift.String
+  @objc dynamic public var activityType: Swift.Int
+  @objc dynamic public var confidence: Swift.Int
+  @objc dynamic public var createdAt: Foundation.Date?
+  @objc dynamic public var startDate: Foundation.Date?
+  @objc dynamic public var endDate: Foundation.Date?
+  @objc dynamic public var floorsClimbed: Swift.Int
+  @objc dynamic public var pedometerChecked: Swift.Int
+  @objc dynamic public var sentToDB: Foundation.Date?
+  @objc dynamic public var steps: Swift.Int
+  @objc dynamic public var analysed: Swift.Int
+  public init(activityId: Swift.String)
+  @objc override dynamic public class func primaryKey() -> Swift.String?
+  override public func identifier() -> Swift.String
+  override public func isValid() -> Swift.Bool
+  public func generateId()
+  public func description() -> Swift.String
+  public func shouldBeUpdatedWith(_ other: (any Tracker.TrackerProtocol)?) -> Swift.Bool
+  public func duration() -> Swift.Int
+  public func addSteps()
+  @objc deinit
+}
+public enum TrackerLogLevel : Swift.CaseIterable {
+  case LOW
+  case MEDIUM
+  case HIGH
+  public var id: Swift.Int {
+    get
+  }
+  public static func getDefault() -> Tracker.TrackerLogLevel
+  public static func getById(_ id: Swift.Int?) -> Tracker.TrackerLogLevel
+  public static func == (a: Tracker.TrackerLogLevel, b: Tracker.TrackerLogLevel) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public typealias AllCases = [Tracker.TrackerLogLevel]
+  public static var allCases: [Tracker.TrackerLogLevel] {
+    get
+  }
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+@_hasMissingDesignatedInitializers public class TrackerTableLocations {
+  public static func getAll(trackerDetached: Swift.Bool = true) -> [Tracker.TrackerDBLocation]
+  public static func getById(_ locationId: Swift.String, trackerDetached: Swift.Bool = true) -> Tracker.TrackerDBLocation?
+  public static func getBetween(_ fromDate: Foundation.Date, _ toDate: Foundation.Date, trackerDetached: Swift.Bool = true) -> [Tracker.TrackerDBLocation]
+  public static func getNotSent(_ maxDate: Foundation.Date, _ limit: Swift.Int = TrackerConstants.INVALID, trackerDetached: Swift.Bool = true) -> [Tracker.TrackerDBLocation]
+  public static func upsert(_ model: Tracker.TrackerDBLocation)
+  public static func upsert(_ models: [Tracker.TrackerDBLocation])
+  public static func truncate()
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class TrackerUtils {
+  public static func testTrackerIntegration(_ completionHandler: @escaping (Swift.Bool, Swift.String?) -> ())
+  public static func getPhoneModel() -> Swift.String?
+  public static func getIosVersion() -> Swift.String?
+  public static func getBatteryPercentage() -> Swift.Int
+  public static func isCharging() -> Swift.Bool
+  public static func getAppName() -> Swift.String?
+  public static func getPackageName() -> Swift.String?
+  public static func getVersionName() -> Swift.String?
+  public static func getVersionCode() -> Swift.String?
+  public static func getAppVersion() -> Swift.String?
+  public static func delay(milliseconds: Swift.Int, code: @escaping Tracker.TrackerClosureVoid)
+  public static func isSimulator() -> Swift.Bool
+  @objc deinit
+}
+public typealias TrackerClosureVoid = () -> ()
+public typealias TrackerClosureInt = (Swift.Int) -> ()
+public typealias TrackerClosureBool = (Swift.Bool) -> ()
+@_hasMissingDesignatedInitializers public class TrackerLogger {
+  public static let TAG: Swift.String
+  public static let LOG_ENABLED: Swift.Bool
+  public static func d(_ string: Swift.String?)
+  public static func i(_ string: Swift.String?)
+  public static func w(_ string: Swift.String?)
+  public static func e(_ string: Swift.String?)
+  public static func o(_ object: Any?)
+  public static func d(_ tag: Swift.String, _ string: Swift.String?)
+  public static func i(_ tag: Swift.String, _ string: Swift.String?)
+  public static func w(_ tag: Swift.String, _ string: Swift.String?)
+  public static func e(_ tag: Swift.String, _ string: Swift.String?)
+  public static func o(_ tag: Swift.String, _ object: Any?)
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class TrackerTimeUtils {
+  public static let ONE_SECOND_MILLIS: Swift.Double
+  public static let ONE_MINUTE_MILLIS: Swift.Double
+  public static let ONE_HOUR_MILLIS: Swift.Double
+  public static let ONE_DAY_MILLIS: Swift.Double
+  public static let utcTimezone: Foundation.TimeZone
+  public static let defaultTimezone: Foundation.TimeZone
+  public static func getUTC() -> Foundation.Date
+  public static func getCurrent() -> Foundation.Date
+  public static func fromUTC(_ date: Swift.String?) -> Foundation.Date?
+  public static func toUTC(_ date: Foundation.Date) -> Foundation.Date
+  public static func toDefault(_ date: Foundation.Date) -> Foundation.Date
+  public static func getZeroSeconds(_ fromDate: Foundation.Date? = nil) -> Foundation.Date
+  public static func getReadableDate(_ date: Foundation.Date, _ skipFuture: Swift.Bool) -> Swift.String
+  public static func log(_ date: Foundation.Date?) -> Swift.String
+  public static func formattedTime(_ fromDate: Foundation.Date?, _ toDate: Foundation.Date?) -> Swift.String
+  public static func format(_ date: Foundation.Date?, _ toFormat: Swift.String, _ timezone: Foundation.TimeZone = defaultTimezone) -> Swift.String
+  public static func parse(_ date: Swift.String?, _ fromFormat: Swift.String) -> Foundation.Date?
+  public static func convertDate(_ date: Swift.String, _ fromFormat: Swift.String, _ toFormat: Swift.String) -> Swift.String
+  public static func isToday(_ date: Foundation.Date?) -> Swift.Bool
+  public static func isThisMonth(_ date: Foundation.Date?) -> Swift.Bool
+  public static func isThisYear(_ date: Foundation.Date?) -> Swift.Bool
+  public static func isSameDay(_ dateStart: Foundation.Date?, _ dateEnd: Foundation.Date?) -> Swift.Bool
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class TrackerRoutinePreferences : Tracker.TrackerBasePreferences {
+  public var firstInstall: Foundation.Date? {
+    get
+    set
+  }
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class TrackerDistanceUtils {
+  public static func metersToMiles(_ meters: Swift.Double, _ decimals: Swift.Int? = nil) -> Swift.Double
+  public static func milesToMeters(_ miles: Swift.Double, _ decimals: Swift.Int? = nil) -> Swift.Double
+  public static func metersToKm(_ meters: Swift.Double, _ decimals: Swift.Int? = nil) -> Swift.Double
+  public static func kmToMeters(_ km: Swift.Double, _ decimals: Swift.Int? = nil) -> Swift.Double
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class TrackerCaloriesUtils {
+  public static func getCaloriesFor(_ segment: Tracker.TrackerDBSegment) -> Swift.Double?
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class TrackerLocationUtils {
+  public static func toLocation(_ latitude: Swift.Double, _ longitude: Swift.Double) -> CoreLocation.CLLocationCoordinate2D
+  public static func getDistance(_ locationA: CoreLocation.CLLocationCoordinate2D, _ locationB: CoreLocation.CLLocationCoordinate2D) -> CoreLocation.CLLocationDistance
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class TrackerBasePreferences {
+  public static func logout()
+  public static func printAll()
+  @objc deinit
+}
+public protocol TrackerProtocol {
+  func isValid() -> Swift.Bool
+  func identifier() -> Swift.String
+}
+@_hasMissingDesignatedInitializers public class TrackerApiManager {
+  public static func updateUser(_ forced: Swift.Bool = false)
+  public static func updateUserPushToken()
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class TrackerTableBriskWalking {
+  public static func getAll(trackerDetached: Swift.Bool = true) -> [Tracker.TrackerDBBriskWalking]
+  public static func getById(_ briskWalkingId: Swift.String, trackerDetached: Swift.Bool = true) -> Tracker.TrackerDBBriskWalking?
+  public static func upsert(_ model: Tracker.TrackerDBBriskWalking)
+  public static func upsert(_ models: [Tracker.TrackerDBBriskWalking])
+  public static func truncate()
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class TrackerTableSegments {
+  public static func getAll(trackerDetached: Swift.Bool = true) -> [Tracker.TrackerDBSegment]
+  public static func getById(_ segmentId: Swift.String, trackerDetached: Swift.Bool = true) -> Tracker.TrackerDBSegment?
+  public static func getBetween(_ fromDate: Foundation.Date, _ toDate: Foundation.Date, trackerDetached: Swift.Bool = true) -> [Tracker.TrackerDBSegment]
+  public static func deleteBetween(_ fromDate: Foundation.Date, _ toDate: Foundation.Date)
+  public static func getNotSent(_ maxDate: Foundation.Date, _ limit: Swift.Int = TrackerConstants.INVALID, trackerDetached: Swift.Bool = true) -> [Tracker.TrackerDBSegment]
+  public static func upsert(_ model: Tracker.TrackerDBSegment)
+  public static func upsert(_ models: [Tracker.TrackerDBSegment])
+  public static func delete(_ model: Tracker.TrackerDBSegment)
+  public static func truncate()
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class TrackerDBBriskWalking : Tracker.TrackerDBModel {
+  @objc dynamic public var briskWalkingId: Swift.String
+  @objc dynamic public var createdAt: Foundation.Date?
+  @objc dynamic public var startDate: Foundation.Date?
+  @objc dynamic public var endDate: Foundation.Date?
+  public init(briskWalkingId: Swift.String)
+  @objc override dynamic public class func primaryKey() -> Swift.String?
+  override public func identifier() -> Swift.String
+  override public func isValid() -> Swift.Bool
+  public func description() -> Swift.String
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class TrackerColor {
+  public static func get(_ named: Swift.String, bundle: Foundation.Bundle = TrackerBundle.application) -> UIKit.UIColor?
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class TrackerLocaleUtils {
+  public static func isItalianLanguage() -> Swift.Bool
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class TrackerOptionsPreferences : Tracker.TrackerBasePreferences {
+  public var uploadDataAgreed: Swift.Bool {
+    get
+    set
+  }
+  @objc deinit
+}
+public enum TrackerLocationAccuracy : Swift.CaseIterable {
+  case UNDEFINED
+  case LOW
+  case MEDIUM
+  case HIGH
+  public var id: Swift.Int {
+    get
+  }
+  public static func getById(_ id: Swift.Int?) -> Tracker.TrackerLocationAccuracy
+  public static func == (a: Tracker.TrackerLocationAccuracy, b: Tracker.TrackerLocationAccuracy) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public typealias AllCases = [Tracker.TrackerLocationAccuracy]
+  public static var allCases: [Tracker.TrackerLocationAccuracy] {
+    get
+  }
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class TrackerDBSummary : Tracker.TrackerDBModel {
+  @objc dynamic public var summaryId: Swift.String
+  @objc dynamic public var date: Foundation.Date?
+  @objc dynamic public var floorsClimbed: Swift.Int
+  @objc dynamic public var numberOfSteps: Swift.Int
+  @objc dynamic public var timeWalking: Swift.Int
+  @objc dynamic public var timeRunning: Swift.Int
+  @objc dynamic public var timeCycling: Swift.Int
+  @objc dynamic public var timeAutomotive: Swift.Int
+  @objc dynamic public var timeOther: Swift.Int
+  @objc dynamic public var briskWalking: Swift.Int
+  @objc dynamic public var distanceWalking: Swift.Int
+  @objc dynamic public var distanceCycling: Swift.Int
+  @objc dynamic public var distanceRunning: Swift.Int
+  @objc dynamic public var distanceAutomotive: Swift.Int
+  @objc dynamic public var distanceOther: Swift.Int
+  @objc dynamic public var weekly: Swift.Int
+  @objc dynamic public var sentToDB: Foundation.Date?
+  public init(summaryId: Swift.String)
+  @objc override dynamic public class func primaryKey() -> Swift.String?
+  override public func identifier() -> Swift.String
+  override public func isValid() -> Swift.Bool
+  public func generateId()
+  public func description() -> Swift.String
+  public func shouldBeUpdatedWith(_ other: (any Tracker.TrackerProtocol)?) -> Swift.Bool
+  @objc deinit
+}
+public enum TrackerUserGender : Swift.CaseIterable {
+  case UNDEFINED
+  case MALE
+  case FEMALE
+  case OTHER
+  case PREFER_NOT_SAY
+  public var id: Swift.Int {
+    get
+  }
+  public var spinnerPosition: Swift.Int {
+    get
+  }
+  public static func getById(_ id: Swift.Int?) -> Tracker.TrackerUserGender
+  public static func getBySpinnerPosition(_ spinnerPosition: Swift.Int?) -> Tracker.TrackerUserGender
+  public static func == (a: Tracker.TrackerUserGender, b: Tracker.TrackerUserGender) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public typealias AllCases = [Tracker.TrackerUserGender]
+  public static var allCases: [Tracker.TrackerUserGender] {
+    get
+  }
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+@_hasMissingDesignatedInitializers public class TrackerImage {
+  public static func get(_ named: Swift.String, bundle: Foundation.Bundle = TrackerBundle.application) -> UIKit.UIImage?
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class TrackerGson {
+  public static func toJsonData<T>(_ encodable: T) -> Foundation.Data? where T : Swift.Encodable
+  public static func toJsonString<T>(_ encodable: T) -> Swift.String? where T : Swift.Encodable
+  public static func toObject<T>(_ json: Swift.String) -> T? where T : Swift.Decodable
+  public static func toArray<T>(_ json: Swift.String) -> [T]? where T : Swift.Decodable
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class TrackerUserPreferences : Tracker.TrackerBasePreferences {
+  public var id: Swift.String? {
+    get
+  }
+  public var pushToken: Swift.String? {
+    get
+    set
+  }
+  public var name: Swift.String? {
+    get
+    set
+  }
+  public var gender: Tracker.TrackerUserGender {
+    get
+    set
+  }
+  public var age: Swift.Int? {
+    get
+    set
+  }
+  public var ageRange: Tracker.TrackerUserAgeRange {
+    get
+    set
+  }
+  public var weight: Swift.Int? {
+    get
+    set
+  }
+  public var height: Swift.Int? {
+    get
+    set
+  }
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class TrackerStepModel {
+  public var startDate: Foundation.Date!
+  public var endDate: Foundation.Date!
+  public var stepsCount: Swift.Int
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class TrackerTrackingPreferences : Tracker.TrackerBasePreferences {
+  public var trackingEnabled: Swift.Bool {
+    get
+    set
+  }
+  public var accuracy: Tracker.TrackerLocationAccuracy {
+    get
+    set
+  }
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class TrackerPreferences {
+  public static let options: Tracker.TrackerOptionsPreferences
+  public static let routine: Tracker.TrackerRoutinePreferences
+  public static let tracking: Tracker.TrackerTrackingPreferences
+  public static let user: Tracker.TrackerUserPreferences
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class TrackerConstants {
+  public static let EMPTY: Swift.String
+  public static let INVALID: Swift.Int
+  public static let TRUE: Swift.Int
+  public static let FALSE: Swift.Int
+  public static let DATABASE_ENCRYPTION_KEY: Swift.String
+  public static let DATE_FORMAT_ID: Swift.String
+  public static let DATE_FORMAT_UTC: Swift.String
+  public static let DATE_FORMAT_ISO: Swift.String
+  public static let DATE_FORMAT_ISO_NO: Swift.String
+  public static let DATE_FORMAT_FULL: Swift.String
+  public static let DATE_FORMAT_DAY_MONTH_YEAR: Swift.String
+  public static let DATE_FORMAT_DAY_MONTH: Swift.String
+  public static let DATE_FORMAT_HOUR_MINUTE: Swift.String
+  public static let ALPHA_ENABLED: CoreFoundation.CGFloat
+  public static let ALPHA_DISABLED: CoreFoundation.CGFloat
+  public static let ALPHA_PRESSED: CoreFoundation.CGFloat
+  public static let BRISK_CHUNKS_THRESHOLD: Swift.Int
+  public static let BRISK_SECONDS_THRESHOLD: Swift.Int
+  public static let BRISK_CHUNK_LENGTH: Swift.Double
+  public static let STEPS_PER_SECOND_THRESHOLD: Swift.Double
+  public static let STEPS_PER_BRISK_MINUTE_THRESHOLD: Swift.Double
+  public static let STEP_PER_CYCLING_METER: Swift.Double
+  public static let STATIONARY_SECONDS: Swift.Int
+  public static let MINIMUM_SEGMENT_DURATION: Swift.Int
+  public static let DISTANCE_FILTER: Swift.Int
+  public static let DATA_UPLOAD_LIMIT: Swift.Int
+  public static let ANALYSE_FREQUENCY_MINUTES: Swift.Int
+  public static let USER_UPDATE_FREQUENCY_HOURS: Swift.Int
+  public static let DATA_UPLOAD_FREQUENCY_HOURS: Swift.Int
+  public static let NOTES_UPLOAD_FREQUENCY_HOURS: Swift.Int
+  @objc deinit
+}
+public enum TrackerActivityType : Swift.CaseIterable {
+  case UNDEFINED
+  case STATIONARY
+  case WALKING
+  case RUNNING
+  case CYCLING
+  case OTHER
+  case AUTOMOTIVE
+  case REMOVED
+  public var id: Swift.Int {
+    get
+  }
+  public static func getById(_ id: Swift.Int?) -> Tracker.TrackerActivityType
+  public static func getByActivity(_ activity: CoreMotion.CMMotionActivity) -> Tracker.TrackerActivityType
+  public static func == (a: Tracker.TrackerActivityType, b: Tracker.TrackerActivityType) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public typealias AllCases = [Tracker.TrackerActivityType]
+  public static var allCases: [Tracker.TrackerActivityType] {
+    get
+  }
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class TrackerDBSegment : Tracker.TrackerDBModel {
+  @objc dynamic public var segmentId: Swift.String
+  @objc dynamic public var type: Swift.Int
+  @objc dynamic public var activityDuration: Swift.Int
+  @objc dynamic public var brisk: Swift.Int
+  @objc dynamic public var createdAt: Foundation.Date?
+  @objc dynamic public var startDate: Foundation.Date?
+  @objc dynamic public var endDate: Foundation.Date?
+  @objc dynamic public var floorsClimbed: Swift.Int
+  @objc dynamic public var distanceTravelled: Swift.Int
+  @objc dynamic public var numberOfBriskChunks: Swift.Int
+  @objc dynamic public var sentToDB: Foundation.Date?
+  @objc dynamic public var steps: Swift.Int
+  @objc dynamic public var userChanged: Swift.Int
+  public var activities: [Tracker.TrackerDBActivity]
+  public var locations: [Tracker.TrackerDBLocation]
+  public init(segmentId: Swift.String)
+  @objc override dynamic public class func primaryKey() -> Swift.String?
+  @objc override dynamic public class func ignoredProperties() -> [Swift.String]
+  override public func identifier() -> Swift.String
+  override public func isValid() -> Swift.Bool
+  public func generateId()
+  public func description() -> Swift.String
+  public func shouldBeUpdatedWith(_ other: (any Tracker.TrackerProtocol)?) -> Swift.Bool
+  public func updateActivityType(_ activityType: Tracker.TrackerActivityType)
+  public func addLocations()
+  public func addSteps()
+  public func getDuration(_ types: [Tracker.TrackerActivityType]? = nil) -> Swift.Int
+  public func getDistance(_ types: [Tracker.TrackerActivityType]? = nil, _ fallbackToStepsLength: Swift.Bool = false) -> Swift.Double
+  public func getCalories() -> Swift.Int?
+  public func getStepsSegmented() -> [Tracker.TrackerStepModel]
+  public func addBrisk()
+  public func getPedometerData() -> Tracker.TrackerDBPedometer?
+  public func sameActivityTypeOf(_ activityType: Swift.Int) -> Swift.Bool
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class TrackerDBLocation : Tracker.TrackerDBModel {
+  @objc dynamic public var locationId: Swift.String
+  @objc dynamic public var accuracy: Swift.Double
+  @objc dynamic public var date: Foundation.Date?
+  @objc dynamic public var latitude: Swift.Double
+  @objc dynamic public var longitude: Swift.Double
+  @objc dynamic public var sentToDB: Foundation.Date?
+  @objc dynamic public var wifyBSSID: Swift.String?
+  @objc dynamic public var analysed: Swift.Int
+  public init(locationId: Swift.String)
+  @objc override dynamic public class func primaryKey() -> Swift.String?
+  override public func identifier() -> Swift.String
+  override public func isValid() -> Swift.Bool
+  public func description() -> Swift.String
+  public func getCoordinate() -> CoreLocation.CLLocationCoordinate2D?
+  public func shouldBeUpdatedWith(_ other: (any Tracker.TrackerProtocol)?) -> Swift.Bool
+  @objc deinit
+}
+public enum TrackerUserAgeRange : Swift.CaseIterable {
+  case UNDEFINED
+  case LESS_THAN_18
+  case RANGE_1824
+  case RANGE_2534
+  case RANGE_3544
+  case RANGE_4554
+  case RANGE_5564
+  case MORE_THAN_65
+  case PREFER_NOT_SAY
+  public var id: Swift.Int {
+    get
+  }
+  public var spinnerPosition: Swift.Int {
+    get
+  }
+  public static func getById(_ id: Swift.Int?) -> Tracker.TrackerUserAgeRange
+  public static func getBySpinnerPosition(_ spinnerPosition: Swift.Int?) -> Tracker.TrackerUserAgeRange
+  public static func == (a: Tracker.TrackerUserAgeRange, b: Tracker.TrackerUserAgeRange) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public typealias AllCases = [Tracker.TrackerUserAgeRange]
+  public static var allCases: [Tracker.TrackerUserAgeRange] {
+    get
+  }
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+@_hasMissingDesignatedInitializers public class TrackerTablePedometer {
+  public static func getAll(trackerDetached: Swift.Bool = true) -> [Tracker.TrackerDBPedometer]
+  public static func getById(_ pedometerId: Swift.String, trackerDetached: Swift.Bool = true) -> Tracker.TrackerDBPedometer?
+  public static func getNotSent(_ maxDate: Foundation.Date, _ limit: Swift.Int = TrackerConstants.INVALID, trackerDetached: Swift.Bool = true) -> [Tracker.TrackerDBPedometer]
+  public static func upsert(_ model: Tracker.TrackerDBPedometer)
+  public static func upsert(_ models: [Tracker.TrackerDBPedometer])
+  public static func truncate()
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class TrackerTableActivities {
+  public static func getAll(trackerDetached: Swift.Bool = true) -> [Tracker.TrackerDBActivity]
+  public static func getById(_ activityId: Swift.String, trackerDetached: Swift.Bool = true) -> Tracker.TrackerDBActivity?
+  public static func getBetween(_ fromDate: Foundation.Date, _ toDate: Foundation.Date, trackerDetached: Swift.Bool = true) -> [Tracker.TrackerDBActivity]
+  public static func deleteBetween(_ fromDate: Foundation.Date, _ toDate: Foundation.Date)
+  public static func getNotAnalysed(trackerDetached: Swift.Bool = true) -> [Tracker.TrackerDBActivity]
+  public static func getNotSent(_ maxDate: Foundation.Date, _ limit: Swift.Int = TrackerConstants.INVALID, trackerDetached: Swift.Bool = true) -> [Tracker.TrackerDBActivity]
+  public static func upsert(_ model: Tracker.TrackerDBActivity)
+  public static func upsert(_ models: [Tracker.TrackerDBActivity])
+  public static func truncate()
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class TrackerTextUtils {
+  public static func isEmpty(_ string: Swift.String?) -> Swift.Bool
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class TrackerDBPedometer : Tracker.TrackerDBModel {
+  @objc dynamic public var pedometerId: Swift.String
+  @objc dynamic public var startDate: Foundation.Date?
+  @objc dynamic public var endDate: Foundation.Date?
+  @objc dynamic public var floorsClimbed: Swift.Int
+  @objc dynamic public var numberOfSteps: Swift.Int
+  @objc dynamic public var sentToDB: Foundation.Date?
+  public init(pedometerId: Swift.String)
+  @objc override dynamic public class func primaryKey() -> Swift.String?
+  override public func identifier() -> Swift.String
+  override public func isValid() -> Swift.Bool
+  public func generateId()
+  public func description() -> Swift.String
+  public func shouldBeUpdatedWith(_ other: (any Tracker.TrackerProtocol)?) -> Swift.Bool
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class TrackerNetwork {
+  public static let ENCODING_UTF8: Swift.String
+  public static let USER_AGENT: Swift.String
+  public static let CONTENT_TYPE: Swift.String
+  public static let CONTENT_TYPE_APPLICATION_JSON: Swift.String
+  public static let CONNECTION: Swift.String
+  public static let CACHE_CONTROL: Swift.String
+  public static let KEEP_ALIVE: Swift.String
+  public static let NO_CACHE: Swift.String
+  public static let POST: Swift.String
+  public static let GET: Swift.String
+  public static let CONNECTION_TIMEOUT: Swift.Double
+  public static let CONNECTION_TIMEOUT_EXTENDED: Swift.Double
+  public static let SOCKET_TIMEOUT: Swift.Double
+  public static let SOCKET_TIMEOUT_EXTENDED: Swift.Double
+  @objc deinit
+}
+public class TrackerConfig {
+  public init()
+  public var logLevel: Tracker.TrackerLogLevel?
+  public var stepsPerSecondThreshold: Swift.Double?
+  public var stepsPerBriskMinuteThreshold: Swift.Double?
+  public var minimumSegmentDuration: Swift.Int?
+  public var locationTrackingEnabled: Swift.Bool
+  public var intensityEnabled: Swift.Bool
+  public var stepsEnabled: Swift.Bool
+  public var cyclingEnabled: Swift.Bool
+  public var automotiveEnabled: Swift.Bool
+  public var wifyAnalysisEnabled: Swift.Bool
+  public var dataUploadEnabled: Swift.Bool
+  public var useLegacyDataUpload: Swift.Bool
+  public var userRegistrationEnabled: Swift.Bool
+  public var useLegacyUserRegistration: Swift.Bool
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers open class TrackerDBModel : RealmSwift.Object, Tracker.TrackerProtocol {
+  open func isValid() -> Swift.Bool
+  open func identifier() -> Swift.String
+  @objc override dynamic public init()
+  @objc deinit
+}
+extension Tracker.TrackerConnectionResult : Swift.Equatable {}
+extension Tracker.TrackerConnectionResult : Swift.Hashable {}
+extension Tracker.TrackerTargetApp : Swift.Equatable {}
+extension Tracker.TrackerTargetApp : Swift.Hashable {}
+extension Tracker.TrackerLogLevel : Swift.Equatable {}
+extension Tracker.TrackerLogLevel : Swift.Hashable {}
+extension Tracker.TrackerLocationAccuracy : Swift.Equatable {}
+extension Tracker.TrackerLocationAccuracy : Swift.Hashable {}
+extension Tracker.TrackerUserGender : Swift.Equatable {}
+extension Tracker.TrackerUserGender : Swift.Hashable {}
+extension Tracker.TrackerActivityType : Swift.Equatable {}
+extension Tracker.TrackerActivityType : Swift.Hashable {}
+extension Tracker.TrackerUserAgeRange : Swift.Equatable {}
+extension Tracker.TrackerUserAgeRange : Swift.Hashable {}
