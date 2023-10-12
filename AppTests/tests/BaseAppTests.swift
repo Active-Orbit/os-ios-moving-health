@@ -3,7 +3,6 @@
 //  BaseAppTests
 //
 //  Created by Omar Brugna on 09/06/2020.
-//  Copyright © 2020 Active Orbit. All rights reserved.
 //
 
 import XCTest

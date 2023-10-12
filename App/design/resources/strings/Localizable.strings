@@ -3,7 +3,6 @@
   BaseApp
 
   Created by Omar Brugna on 12/06/2020.
-  Copyright © 2020 Active Orbit. All rights reserved.
 */
 
 "about_me" = "About me";
@@ -290,7 +289,7 @@
 "failed_feedback" = "Failed to upload your feedback";
 "failure" = "Whoops! Something went wrong! Try again later.";
 "faq" = "Frequently asked questions";
-"faq_answers_1" = "The application is developed and maintained by Active Orbit Ltd.";
+"faq_answers_1" = "This is an open source project";
 "faq_answers_2" = "The Moving Health app is part of a study to understand how patterns of physical activity and mobility differ in people with disease compared with healthy people. This may allow us to predict or detect diseases earlier and develop better treatments.";
 "faq_answers_3" = "We take privacy and security of your data very seriously. We will do everything possible to reduce the risk of unauthorised access. Your personal details, phone data, and NHS data will not be stored in the same place. This means that even if unauthorised access occurs, the risk to your privacy or of misuse of the data is low.\n\nWe have put in place many measures to protect your privacy and data security. It is not possible to be completely guard against unauthorised access. We will continue to monitor and update our protection against this.";
 "faq_answers_4" = "Researchers will only be able to access data that cannot be used to identify you (called de-identified data) to protect your privacy. Activity, mobility and questionnaire data will be linked to data from NHS records by a pseudo-identifier code in a highly secure, password-protected database. No personal identifiable details (e.g. name, date of birth, NHS number, contact details) are included in this database.";

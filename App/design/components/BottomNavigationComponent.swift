@@ -3,7 +3,6 @@
 //  App
 //
 //  Created by George Stavrou on 25/07/2023.
-//  Copyright © 2023 Active Orbit. All rights reserved.
 //
 
 import UIKit

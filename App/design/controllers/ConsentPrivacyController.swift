@@ -3,7 +3,6 @@
 //  BaseApp
 //
 //  Created by Omar Brugna on 17/08/2023.
-//  Copyright © 2020 Active Orbit. All rights reserved.
 //
 
 import UIKit

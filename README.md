@@ -8,7 +8,6 @@ A smartphone study of activity and mobility in people with and without disease. 
 | [Configuration](#configuration)   |
 | [Setup](#setup)                   |
 | [License](#license)               |
-| [Copyright](#copyright)           |
 
 ## Requirements
 
@@ -33,7 +32,3 @@ A smartphone study of activity and mobility in people with and without disease. 
 ## License
 
 Library is available under the Apache 2.0 license. See the [LICENSE](./LICENSE) file for more info.
-
-## Copyright
-
-© Active Orbit, 2023

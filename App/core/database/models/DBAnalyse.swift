@@ -3,7 +3,6 @@
 //  App
 //
 //  Created by Omar Brugna on 31/07/23.
-//  Copyright © 2023 Active Orbit. All rights reserved.
 //
 
 import Foundation
